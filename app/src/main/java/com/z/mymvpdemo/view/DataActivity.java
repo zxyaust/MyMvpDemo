@@ -27,16 +27,39 @@ public class DataActivity extends AppCompatActivity implements DaoContract.View 
 
     }
 
+    /**
+     * 只是发出这个取的消息,取到了没取到交给p层判断,不做任何业务逻辑
+     * @param view
+     */
     public void get(View view) {
         data = daoPresenter.getData();
-        mTvEditText.setText(data);
-        ToastUtils.show("取出了:" + data);
     }
 
+    /**
+     * 发出存数据的命令,并更新界面,v层只管发命令,更界面,其他的绝对不干
+     * @param view
+     */
     public void set(View view) {
         data = mTvEditText.getText().toString();
         daoPresenter.setData(data);
         mTvEditText.setText("");
         ToastUtils.show("保存了:" + data);
+    }
+
+    /**
+     * 取失败了
+     */
+    @Override
+    public void onError() {
+        ToastUtils.show("数据库操作错误");
+    }
+
+    /**
+     * 取成功了
+     */
+    @Override
+    public void onGetDataSuceess() {
+        mTvEditText.setText(data);
+        ToastUtils.show("取出了:" + data);
     }
 }

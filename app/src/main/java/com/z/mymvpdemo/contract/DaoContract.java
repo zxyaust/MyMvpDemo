@@ -9,6 +9,8 @@ public interface DaoContract {
         void setData(String data);
     }
     interface View {
+        void onError();
+        void onGetDataSuceess();
     }
     interface Presenter {
         String getData();
