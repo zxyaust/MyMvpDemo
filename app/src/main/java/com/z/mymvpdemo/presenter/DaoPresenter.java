@@ -12,7 +12,13 @@ public class DaoPresenter implements DaoContract.Presenter {
         daoModel = new DaoModel();
     }
 
+    /**
+     * 持有v对象,用于发通知
+     */
     private DaoContract.View daoView;
+    /**
+     * 持有m对象,用于向下发命令
+     */
     private DaoContract.Model daoModel;
 
     /**

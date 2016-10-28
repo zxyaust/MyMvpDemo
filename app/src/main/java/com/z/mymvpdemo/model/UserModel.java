@@ -5,6 +5,7 @@ import com.z.mymvpdemo.contract.UserContract;
 
 /**
  * Created by max on 2016/10/28.
+ * 不持有v和p层对象,但是用到了listener对象,用于向上发送通知,这是异步操作时才需要的
  */
 public class UserModel implements UserContract.IUserModel {
     @Override

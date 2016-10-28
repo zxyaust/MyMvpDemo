@@ -16,6 +16,9 @@ import com.z.mymvpdemo.presenter.DaoPresenter;
 public class DataActivity extends AppCompatActivity implements DaoContract.View {
 
     private EditText mTvEditText;
+    /**
+     * 要持有p对象,用于向下发送命令
+     */
     private DaoPresenter daoPresenter = new DaoPresenter(this);
     private String data;
 
